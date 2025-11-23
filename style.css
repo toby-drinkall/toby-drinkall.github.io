@@ -119,15 +119,49 @@ p {
   color: #6c584c;
 }
 
+/* Modern + / – icon in a soft circle */
+
 .summary-toggle .chevron {
-  font-size: 0.8rem;
-  transition: transform 0.2s ease;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(108, 88, 76, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
-/* Rotate chevron when open */
+/* The two bars that form + (closed) and – (open) */
 
-.summary-item.open .chevron {
-  transform: rotate(180deg);
+.summary-toggle .chevron::before,
+.summary-toggle .chevron::after {
+  content: "";
+  position: absolute;
+  background-color: rgba(108, 88, 76, 0.9);
+  transition: transform 0.18s ease, opacity 0.18s ease;
+}
+
+/* Horizontal bar */
+
+.summary-toggle .chevron::before {
+  width: 8px;
+  height: 1.4px;
+}
+
+/* Vertical bar (to make + when closed) */
+
+.summary-toggle .chevron::after {
+  width: 1.4px;
+  height: 8px;
+}
+
+/* When open: fade out/shrink the vertical bar so it looks like a – */
+
+.summary-item.open .chevron::after {
+  opacity: 0;
+  transform: scaleY(0.3);
 }
 
 /* Hidden/visible content with slide animation */
@@ -268,3 +302,4 @@ a:hover {
   font-style: italic;
   margin-left: 0.2rem;
 }
+
