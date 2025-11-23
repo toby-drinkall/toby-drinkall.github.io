@@ -76,12 +76,12 @@ p {
   margin: 0 0 0.8rem 0;
 }
 
-/* === Summary rectangle: four separate collapsible boxes === */
+/* === Summary rectangle: four separate collapsible boxes (flex layout) === */
 
 .summary-grid {
   margin-top: 1.5rem;
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 0.75rem;
 }
 
@@ -90,6 +90,8 @@ p {
   border-radius: 12px;
   border: 1px solid rgba(64, 61, 57, 0.12);
   padding: 0.5rem 0.7rem;
+  flex: 1 1 calc(25% - 0.75rem); /* four per row on large screens */
+  min-width: 150px;
 }
 
 /* Clickable heading in each box */
@@ -144,14 +146,14 @@ p {
 /* Responsive layout for summary grid */
 
 @media (max-width: 900px) {
-  .summary-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .summary-item {
+    flex: 1 1 calc(50% - 0.75rem); /* two per row */
   }
 }
 
 @media (max-width: 550px) {
-  .summary-grid {
-    grid-template-columns: 1fr;
+  .summary-item {
+    flex: 1 1 100%; /* stacked */
   }
 }
 
