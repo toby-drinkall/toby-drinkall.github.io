@@ -14,17 +14,20 @@
     <div class="header-text">
       <h1>Tobias Drinkall</h1>
       <p>Research Scientist · AI Alignment, Defence, Policy & Communication</p>
-      <p>
-        <a href="#bio">Bio</a> ·
-        <a href="#writing">My Writing</a> ·
+      <p class="header-links">
+        <a href="#about">About</a> ·
+        <a href="#projects">Projects</a> ·
+        <a href="#writing">Writing</a> ·
+        <a href="#testimonials">Testimonials</a> ·
         <a href="#contact">Contact</a>
       </p>
     </div>
   </header>
 
   <main>
-    <section id="bio">
-      <h2>Bio</h2>
+    <!-- About -->
+    <section id="about">
+      <h2>About</h2>
       <p>
         I’m a research scientist interested in machine learning, interpretability, and the ethics of AI in high-stakes systems.
         I’m currently completing my MSc at the University of Oxford, where my thesis explores strategic creativity in military
@@ -39,11 +42,75 @@
         where I lead Oxford’s team in developing the first benchmarks for evaluating LLMs’ adherence to International Humanitarian Law.
         This work sits at the intersection of frontier AI, interpretability, and responsible deployment.
       </p>
+
+      <!-- Highlight rectangle with four sections -->
+      <div class="summary-grid">
+        <div class="summary-item">
+          <h3>Degree</h3>
+          <p>
+            MSc Social Science of the Internet, University of Oxford<br>
+            Focus: AI governance, military decision-support systems, and interpretability.
+          </p>
+        </div>
+        <div class="summary-item">
+          <h3>Fellowships</h3>
+          <p>
+            Senior Fellow & Team Lead, Next Frontier Seminar (AI & National Security).<br>
+            Work spans LLM evaluation, IHL compliance, and strategic risk analysis.
+          </p>
+        </div>
+        <div class="summary-item">
+          <h3>Judging</h3>
+          <p>
+            Reviewer and judge for AI safety and alignment initiatives, hackathons, and research competitions focused on
+            high-stakes deployment and responsible AI.
+          </p>
+        </div>
+        <div class="summary-item">
+          <h3>Conferences</h3>
+          <p>
+            Talks and workshops delivered at institutions including Stanford’s Hoover Institution, NATO-affiliated events,
+            Oxford, and policy forums in Washington, D.C. and Europe.
+          </p>
+        </div>
+      </div>
     </section>
 
+    <!-- Projects -->
+    <section id="projects">
+      <h2>Projects</h2>
+      <ul class="card-list">
+        <li class="card">
+          <h3>LLM IHL Benchmarking</h3>
+          <p class="meta">Next Frontier Seminar · Senior Fellow & Team Lead</p>
+          <p>
+            Developing a simulation-based evaluation suite for language models, measuring their adherence to
+            International Humanitarian Law in conflict scenarios, with metrics for escalation and civilian harm.
+          </p>
+        </li>
+        <li class="card">
+          <h3>Ethics of AI in Defence</h3>
+          <p class="meta">Oxford Internet Institute · Alan Turing Institute</p>
+          <p>
+            Researching ethical frameworks and governance models for AI-enabled military decision-support systems, with
+            a focus on meaningful human control, accountability, and transparency.
+          </p>
+        </li>
+        <li class="card">
+          <h3>MSc Thesis: Strategic Creativity in Human–AI Collaboration</h3>
+          <p class="meta">University of Oxford</p>
+          <p>
+            Exploring how AI systems shape strategic reasoning in adversarial settings, and how human–AI teams can be
+            structured to preserve creativity, normative alignment, and robust oversight.
+          </p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Writing -->
     <section id="writing">
-      <h2>My Writing</h2>
-      <ul>
+      <h2>Writing</h2>
+      <ul class="writing-list">
         <li>
           <strong>
             <a href="quantifying-legal-risks.html">
@@ -68,10 +135,40 @@
           </strong>
           – Ongoing work on how AI decision-support systems shape strategic reasoning in adversarial environments.
         </li>
-        <!-- Add or remove items as you create more pages -->
       </ul>
     </section>
 
+    <!-- Testimonials -->
+    <section id="testimonials" class="testimonials">
+      <h2>Testimonials</h2>
+      <div class="testimonial-list">
+        <figure class="testimonial">
+          <blockquote>
+            “Tobias combines technical depth with an unusual ability to communicate complex ideas clearly to both
+            technical and policy audiences.”
+          </blockquote>
+          <figcaption>Senior researcher in AI ethics & defence</figcaption>
+        </figure>
+
+        <figure class="testimonial">
+          <blockquote>
+            “His work on evaluating LLMs in military wargaming has been instrumental in shaping how we think about
+            responsible deployment in high-stakes environments.”
+          </blockquote>
+          <figcaption>National security fellow & project collaborator</figcaption>
+        </figure>
+
+        <figure class="testimonial">
+          <blockquote>
+            “Tobias is rare in that he is comfortable writing, coding, and presenting at a very high level – and can
+            connect these skills directly to real-world decisions.”
+          </blockquote>
+          <figcaption>Industry partner in AI strategy</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Contact -->
     <section id="contact" class="contact">
       <h2>Contact</h2>
       <p>
