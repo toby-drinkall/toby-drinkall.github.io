@@ -76,7 +76,7 @@ p {
   margin: 0 0 0.8rem 0;
 }
 
-/* Summary rectangle: four separate boxes, collapsible */
+/* === Summary rectangle: four separate collapsible boxes === */
 
 .summary-grid {
   margin-top: 1.5rem;
