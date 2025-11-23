@@ -141,6 +141,16 @@ p {
   color: #4f3e36;
 }
 
+/* OPEN state: keep hover styling even when not hovered */
+
+.summary-item.open .summary-toggle {
+  background-color: rgba(108, 88, 76, 0.06);
+}
+
+.summary-item.open .summary-toggle h3 {
+  color: #4f3e36;
+}
+
 /* Clean text-based chevron that rotates */
 
 .summary-toggle .chevron {
@@ -160,10 +170,12 @@ p {
   opacity: 1;
 }
 
-/* Open state: rotate arrow 180deg (▾ -> ∧) */
+/* Open state: rotate arrow 180deg (▾ -> ∧) and keep stronger colour */
 
 .summary-item.open .chevron {
   transform: translateY(1px) rotate(180deg);
+  color: rgba(79, 62, 54, 1);
+  opacity: 1;
 }
 
 /* Hidden/visible content with slide animation */
