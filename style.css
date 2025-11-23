@@ -308,3 +308,13 @@ a:hover {
   font-style: italic;
   margin-left: 0.2rem;
 }
+
+.card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.card-link:hover {
+  text-decoration: none; /* keep it clean, no underline */
+}
