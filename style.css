@@ -369,3 +369,35 @@ a:hover {
   padding: 0.4rem 0.8rem;
   margin-bottom: 0.4rem;
 }
+
+/* ===== Essay layouts (Elegant Systems, etc.) ===== */
+
+.essay-figure {
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+.essay-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.essay-figure figcaption {
+  margin-top: 0.4rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  color: #666;
+}
+
+/* two images side-by-side, wrapping on mobile */
+.essay-two-col {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.essay-two-col .essay-figure {
+  flex: 1 1 260px;
+}
