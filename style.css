@@ -364,3 +364,8 @@ a:hover {
 .card-link:hover {
   text-decoration: none; /* keep it clean, no underline */
 }
+
+.slim-card {
+  padding: 0.4rem 0.8rem;
+  margin-bottom: 0.4rem;
+}
