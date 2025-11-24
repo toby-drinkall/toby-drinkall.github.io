@@ -18,27 +18,86 @@
         <a href="index.html#about">About</a> ·
         <a href="index.html#projects">Projects</a> ·
         <a href="index.html#writing">Writing</a> ·
-        <a href="index.html#contact">Contact</a>
+        <a href="#contact">Contact</a>
       </p>
     </div>
   </header>
 
   <main>
-    <section>
+    <!-- Intro -->
+    <section id="theological-takes">
       <h2>Theological Takes</h2>
       <p>
-        Occasional essays at the intersection of theology, technology, and modern life.
+        Occasional essays where theology bumps into technology, institutions, and modern life.
       </p>
 
-      <ul class="writing-list">
-        <!-- You can add items like this as you write them -->
-        <!--
-        <li>
-          <strong><a href="your-essay-slug.html">Essay Title</a></strong>
-          – one-line description of the piece.
+      <ul class="card-list">
+        <!-- EXAMPLE ESSAY 1 – on-site HTML page -->
+        <li class="card">
+          <div class="card-top-row">
+            <h3>Providence, Probability, and Machine Learning</h3>
+            <a
+              href="providence-and-probability.html"
+              class="paper-pill"
+              aria-label="Read: Providence, Probability, and Machine Learning"
+            >
+              <span class="paper-pill-icon">→</span>
+            </a>
+          </div>
+          <p class="meta">Essay · HTML</p>
+          <p>
+            On how probabilistic models sit alongside older ideas of providence, agency, and responsibility.
+          </p>
         </li>
-        -->
+
+        <!-- EXAMPLE ESSAY 2 – PDF -->
+        <li class="card">
+          <div class="card-top-row">
+            <h3>Liturgies of the Feed</h3>
+            <a
+              href="Liturgies%20of%20the%20Feed.pdf"
+              class="paper-pill"
+              aria-label="Open PDF: Liturgies of the Feed"
+            >
+              <span class="paper-pill-icon">↗</span>
+            </a>
+          </div>
+          <p class="meta">Essay · PDF</p>
+          <p>
+            A short piece on how social feeds function like secular liturgies shaping attention and desire.
+          </p>
+        </li>
+
+        <!-- EXAMPLE ESSAY 3 – another HTML hub/series -->
+        <li class="card">
+          <div class="card-top-row">
+            <h3>Notes on Faith and Institutions</h3>
+            <a
+              href="faith-and-institutions.html"
+              class="paper-pill"
+              aria-label="Read: Notes on Faith and Institutions"
+            >
+              <span class="paper-pill-icon">→</span>
+            </a>
+          </div>
+          <p class="meta">Essay Series · HTML</p>
+          <p>
+            Fragmented notes on trust, authority, and how institutions cope with AI-mediated information.
+          </p>
+        </li>
       </ul>
+    </section>
+
+    <!-- Contact (same style as index) -->
+    <section id="contact" class="contact">
+      <h2>Contact</h2>
+      <p>
+        <a href="https://www.linkedin.com/in/toby-drinkall-76aa75197/" target="_blank" rel="noopener">
+          LinkedIn
+        </a>
+        ·
+        toby.drinkall [at] gmail.com
+      </p>
     </section>
   </main>
 </body>
