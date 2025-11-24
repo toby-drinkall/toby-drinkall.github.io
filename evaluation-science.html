@@ -7,6 +7,55 @@
   <link href="style.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Inter&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="favicon.png">
+
+  <!-- Page-specific styling for the taxonomy table -->
+  <style>
+    .eval-intro {
+      margin-bottom: 1.6rem;
+    }
+
+    .eval-section h3 {
+      margin-top: 1.8rem;
+      margin-bottom: 0.4rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+    }
+
+    .eval-section p {
+      margin-top: 0;
+    }
+
+    .eval-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.2rem 0 1.6rem 0;
+      font-size: 0.9rem;
+    }
+
+    .eval-table th,
+    .eval-table td {
+      border: 1px solid rgba(64, 61, 57, 0.15);
+      padding: 0.6rem 0.7rem;
+      vertical-align: top;
+    }
+
+    .eval-table th {
+      background-color: #e4eef8;       /* soft blue header, like the PDF */
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #403d39;
+    }
+
+    .eval-table td {
+      background-color: rgba(255, 255, 255, 0.95);
+    }
+
+    .eval-table em {
+      font-style: italic;
+    }
+  </style>
 </head>
 <body>
   <header class="header-flex">
@@ -24,17 +73,127 @@
   </header>
 
   <main>
-    <section id="evaluation-science">
-      <h2>Evaluation Science</h2>
-      <p>
-        Reflections on the state of evaluation science, its limitations, and how it should
-        shape the future of AI safety.
-      </p>
+    <section id="evaluation-science" class="eval-section">
+      <h2>The State of Evaluation Science</h2>
 
-      <!--
-        TODO: Paste or write the full “State of Evaluation Science” content here.
-        Use normal HTML structure: <p>, <h3>, <ul>, etc.
-      -->
+      <div class="eval-intro">
+        <h3>Outline</h3>
+        <p>
+          For this memo, we understand “loss of control” over AI systems to mean the inability to predict or constrain
+          either the behaviour of an AI system or the purposes for which it can be used. Evaluations are used to address
+          these unknowns, generally seeking to better understand AI’s capabilities and potential societal impacts,
+          often with the explicit purpose of informing governance decisions.
+        </p>
+        <p>
+          This memo provides an overview of current approaches in evaluation science to predict the capabilities and
+          misuse vulnerabilities of AI systems. We then outline the benefits and fundamental limitations of evaluation
+          science to consider when assessing the role of evaluations in AI safety and for informing AI governance
+          priorities.
+        </p>
+      </div>
+
+      <h3>State of the Art Taxonomy</h3>
+      <table class="eval-table">
+        <thead>
+          <tr>
+            <th>Capabilities Evaluations</th>
+            <th>Bias Evaluations</th>
+            <th>Misuse Risk Evaluations</th>
+            <th>Control Evaluations</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              Evaluates what AI systems do, testing for binary capabilities.<br><br>
+              <em>Example:</em> Factual recall ability on standardised tests.<br><br>
+              <em>Research:</em> MMLU (Hendrycks et al., 2021), TruthfulQA (Lin et al., 2022), and
+              HumanEval (Chen et al., 2021).
+            </td>
+            <td>
+              Evaluates what AI systems do, testing for subjectively undesirable biases.<br><br>
+              <em>Example:</em> Gender bias in LLMs.<br><br>
+              <em>Research:</em> Political bias (Potter et al., 2024; Motoki et al., 2024),
+              territorial border bias (Li et al., 2024), geopolitical bias (Salnikov et al., 2025),
+              military targeting bias (Drinkall, 2025).
+            </td>
+            <td>
+              Evaluates AI systems’ resilience to potential attackers exploiting threat vectors,
+              identified via adversarial testing, or “red teaming.”<br><br>
+              <em>Example:</em> LLM leaking sensitive company data, or assisting in biological warfare planning.<br><br>
+              <em>Research:</em> Prompt Injection Benchmark.
+            </td>
+            <td>
+              Evaluates the ability of monitoring systems to prevent rogue AI systems or agents from performing
+              undesirable actions.<br><br>
+              <em>Example:</em> Monitoring system's ability to identify an LLM deceiving its user.<br><br>
+              <em>Research:</em> AI Safety Atlas, and the difficulty of evaluating deceptive agents.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="eval-section">
+        <h3>Benefits of AI Evaluations</h3>
+        <p>
+          <strong>Lower Bound Capabilities.</strong> Capability evaluations can provide concrete evidence of what AI
+          systems can do. When an AI system completes a task, such as manipulating humans in a controlled
+          environment or identifying cybersecurity vulnerabilities, we know concretely that this is an ability
+          (Barnett &amp; Thiergart, 2024). Bias evaluations similarly provide evidence of concerning tendencies,
+          at least at the lower bound of an AI system’s capabilities.
+        </p>
+        <p>
+          <strong>Red Teaming.</strong> Misuse risk evaluators acting adversarially as “bad actors” can identify
+          threat vectors and minimise their risk through fine-tuning. Similarly, control evaluations can mitigate
+          rogue AI systems by testing monitoring systems’ ability to constrain deceptive agents.
+        </p>
+      </div>
+
+      <div class="eval-section">
+        <h3>Limitations of AI Evaluations</h3>
+        <p>
+          <strong>Upper Bound Capabilities.</strong> Evaluations cannot provide strong evidence of the absence of
+          capabilities (under-elicitation). Evaluations are proxies and cannot test for real-world or novel
+          conditions. Evaluation assumptions, such as proxy-task design, heavily dictate results (see CybersecEval
+          and Project Naptime).
+        </p>
+        <p>
+          <strong>Threat Modelling Difficulty.</strong> Red-teaming effectiveness relies on the evaluators being
+          able to better predict threat vectors than malicious attackers themselves.
+        </p>
+        <p>
+          <strong>Forecasting.</strong> Evaluations cannot reliably predict the future capabilities of AI, nor can
+          they anticipate discontinuous progress, as Anthropic, DeepMind, and OpenAI recognise. This means
+          evaluations could provide false confidence about emerging threats.
+        </p>
+      </div>
+
+      <div class="eval-section">
+        <h3>The Future of AI Evaluation</h3>
+        <p>
+          <strong>Model Autonomy Risks.</strong> Sophisticated systems may recognise they are being tested and
+          behave differently or hide capabilities.
+        </p>
+        <p>
+          <strong>Multi-turn Agent Evals.</strong> Multi-turn testing, suitable for robust Agentic AI evaluations,
+          is still a nascent science (Drinkall, 2025).
+        </p>
+        <p>
+          <strong>Superhuman AI.</strong> The wider the difference in cognitive profiles of humans and AI, the more
+          difficult threat modelling becomes. Referred to as “unknown unknown risks,” the emergence of highly
+          sophisticated AGI could lead to unpredictable capabilities.
+        </p>
+      </div>
+
+      <div class="eval-section">
+        <h3>Conclusion</h3>
+        <p>
+          While evaluations contribute to the basic science of AI, providing empirical evidence of capabilities that
+          prepare us for AI’s societal impacts and serving to coordinate policy discussion, they have fundamental
+          limitations that, if not considered, could provide a false sense of control, especially as AI systems
+          surpass human intelligence.
+        </p>
+      </div>
     </section>
 
     <section id="contact" class="contact">
